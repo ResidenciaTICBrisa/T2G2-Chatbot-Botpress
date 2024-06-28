@@ -25,8 +25,7 @@ function _injectDOMElement(tagName, selector, options) {
 function _generateIFrameHTML(host, config) {
   const botId = config.botId || ''
   const options = encodeURIComponent(JSON.stringify({ config: config }))
-  const viewMode = config.viewMode || 'Embedded'
-  let iframeSrc = host + '/lite/' + botId + '/?m=channel-web&v=' + viewMode + '&options=' + options
+  let iframeSrc = host + '/lite/' + botId + '/?m=channel-web&v=Embedded&options=' + options
   if (config.ref) {
     iframeSrc += '&ref=' + encodeURIComponent(config.ref)
   }
