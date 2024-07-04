@@ -54,7 +54,7 @@ class MessageList extends React.Component<MessageListProps, State> {
         mode={'bottom'}
         initialScrollBehavior={'auto'}
         tabIndex={0}
-        className={'bpw-msg-list-scroll-container'}
+        className={'bpw-msg-list'}
         scrollViewClassName={'bpw-msg-list'}
         ref={m => {
           this.messagesDiv = m
