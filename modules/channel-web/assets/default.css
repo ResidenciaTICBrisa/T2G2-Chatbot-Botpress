@@ -1,5 +1,4 @@
 /* Old version IE 10 and 11 only */
-/* editado 27/06*/
 :root {
   --main-bg-color: #ffffff;
   --main-bg-color-hover: rgba(255, 255, 255, 0.9);
@@ -50,7 +49,7 @@ body {
 }
 
 .bpw-widget-btn {
-  background-color: #1351b4;  /* Original dark blue color */
+  background-color: #000000;
 }
 
 .bpw-message-read-more {
@@ -65,9 +64,12 @@ body {
   text-align: left;
   text-decoration: underline;
 }
-.bpw-widget-btn:focus, .bpw-widget-btn:hover {
-  background-color: #1351b4;
+
+.bpw-widget-btn:focus,
+.bpw-widget-btn:hover {
+  background-color: #333;
 }
+
 .bpw-chat-container {
   background-color: #ffffff;
   color: #000000;
@@ -107,7 +109,7 @@ body {
   font-size: 1rem;
   padding: 0.4rem 0.8rem;
   min-width: 5rem;
-  min-height: 0rem;
+  min-height: 40px;
   text-align: center;
   border: 1px solid currentColor;
   border-radius: 0px;
@@ -116,6 +118,10 @@ body {
   text-transform: none;
   overflow: visible;
   align-items: flex-start;
+}
+
+.bpw-file-button {
+  padding: 0;
 }
 
 .bpw-button-alt {
@@ -272,18 +278,25 @@ body {
   min-height: 1px;
 }
 
-.bpw-msg-list {
+.bpw-msg-list-scroll-container {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
   -ms-flex-positive: 1;
   flex-grow: 1;
+}
+
+.bpw-msg-list {
   padding: 0 0.5rem 0.5rem 0.5rem;
 }
 
+.bpw-msg-list-follow {
+  display: none;
+}
+
 .bpw-date-container {
-  color: #000000;
+  color: #666;
   text-align: center;
   font-size: 12px;
   margin: 40px 0 20px;
@@ -387,8 +400,11 @@ body {
 
 .bpw-bubble-carousel {
   background: none;
+  border: 0px;
+  padding: 0px;
   margin: 10px 0;
-  width: 100%;
+  text-align: left;
+  width: 250px; /* Magic number so that it fits properly in the web */
 }
 
 .bpw-bubble-file {
@@ -437,6 +453,14 @@ body {
   padding: 15px 20px;
   text-align: left;
   border-top: 1px solid #dcdcdc;
+}
+
+.bpw-in-message-quick_reply {
+  padding-top: 10px;
+}
+
+.bpw-in-message-quick_reply > button {
+  margin: 2px;
 }
 
 /* CAROUSEL  */
@@ -620,6 +644,11 @@ body {
   margin: 0.2rem 0.5rem;
 }
 
+.bpw-in-message-quick_reply-dropdown {
+  margin: 0.2rem 0.5rem;
+  width: 200px;
+}
+
 .bpw-composer {
   border-top-width: 1px;
   border-top-style: solid;
@@ -633,8 +662,12 @@ body {
 }
 
 .bpw-composer-inner {
-  display: none;
+  display: flex;
   padding: 5px;
+}
+
+.bpw-composer-textarea {
+  flex-grow: 2;
 }
 
 .bpw-composer textarea {
@@ -657,9 +690,8 @@ body {
 }
 
 .bpw-send-buttons {
-  display: none;
-  align-items: center;
-  padding: 6px;
+  display: flex;
+  flex-direction: row;
 }
 
 .bpw-send-button {
