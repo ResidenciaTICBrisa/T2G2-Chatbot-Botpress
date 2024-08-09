@@ -37,7 +37,7 @@ jobs:
           elif [[ $GITHUB_REF == refs/heads/* ]]; then
             VERSION+=($(echo ${GITHUB_REF#refs/heads/} | sed -r 's#/+#-#g')) # transform feature/00-feature-branch to feature-00-feature-branch
           fi
-          GITHUB_REGISTRY="ghcr.io/${{ github.repository_owner | toLower }}/botpress/server"
+          GITHUB_REGISTRY="ghcr.io/residenciaticbrisa/botpress/server"
           TAGS+=("${VERSION[@]/#/${GITHUB_REGISTRY}:}")
           IFS=,
           echo ::set-output name=version::${VERSION[*]}
